@@ -10,18 +10,18 @@ client = discord.Client()
 async def on_ready():
     print(client.user.id)
     print("ready")
-    game = discord.Game("똘똘똘이 감시")
+    game = discord.Game("*")
     await client.change_presence(status=discord.Status.online, activity=game)
-    twitch = "jungtaejune"
-    name = "똘삼"
-    channel = client.get_channel(815144378817052713)
+    twitch = "*"
+    name = "*"
+    channel = client.get_channel(*)
     a = 0
     while True:
-        headers = {'Client-ID': '9pntjil5qu35etgb4b50ve0xsap8tu'}
+        headers = {'Client-ID': 'Client-ID'}
         response = requests.get("https://api.twitch.tv/helix/streams?user_login=" + twitch, headers=headers)
         try:
             if loads(response.text)['data'][0]['type'] == 'live' and a == 0:
-                await channel.send(name + "@F31YX#4849")
+                await channel.send(name + "*")
                 a = 1
         except:
             a = 0
@@ -39,4 +39,4 @@ async def on_message(message):
         await client.get_channel(int(channel)).send(msg)
 
 
-client.run("ODE1MTI3NzAyMDc5MDEyOTM3.YDn41A.DKnkVpmGz7lrexwumOegnrr-hm8")
+client.run("*")
